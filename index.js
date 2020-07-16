@@ -9,7 +9,7 @@ const REGEX_EXTENSIONID = /[a-z]{32}$/;
 
 var app = express();
 
-function getStats(extensionID) {
+async function getStats(extensionID) {
 	if (!REGEX_EXTENSIONID.test(extensionID.toLowerCase())) {
 		return new Promise(function(resolve, reject) {
 			resolve({
@@ -27,19 +27,20 @@ function getStats(extensionID) {
         uri: url,
 	};
 	
-	return rp(options).then(function(data) {
+	try {
+		const data = await rp(options);
 		const name = data.match(REGEX_NAME)[1] || 'No name';
 		const installCount = parseInt(data.match(REGEX_INSTALL_COUNT)[1]) || 0;
 		const ratingCount = parseInt(data.match(REGEX_RATING_COUNT)[1]) || 0;
 		const ratingValue = parseFloat(data.match(REGEX_RATING_VALUE)[1]) || 0;
-
 		return {
 			success: true,
 			installCount,
 			ratingCount,
 			ratingValue
 		};
-	}).catch(function(e) {
+	}
+	catch (e) {
 		return {
 			success: false,
 			error: "Couldn't find extension with ID " + extensionID,
@@ -47,7 +48,7 @@ function getStats(extensionID) {
 			ratingCount: 0,
 			ratingValue: 0
 		};
-	});
+	}
 }
 
 
