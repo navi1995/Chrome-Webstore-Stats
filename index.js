@@ -1,6 +1,4 @@
-const express = require('express');
 const fetch = require('node-fetch');
-const PORT = 8080;
 //Credit to https://github.com/petasittek/chrome-web-store-stats/ for regex below
 const URL_PREFIX = 'https://chrome.google.com/webstore/detail/';
 const REGEX_NAME = '<meta itemprop="name" content="([^"]*)"/>';
@@ -9,25 +7,8 @@ const REGEX_RATING_COUNT = '<meta itemprop="ratingCount" content="([0-9]*)"/>';
 const REGEX_RATING_VALUE = '<meta itemprop="ratingValue" content="([0-9.]*)"/>';
 //Credit to https://github.com/petasittek/chrome-web-store-stats/ for regex above
 const REGEX_EXTENSIONID = /[a-z]{32}$/;
-var app = express();
 
-app.use((req, res, next) => {
-	res.type('json');
-	next();
-});
-app.get('/webstore-stats', async (req, res) => {
-	var extensionID = req.query.id;
-	var data = await getStats(extensionID);
-
-	if (data.error) {
-		return res.status(400).json(data);
-	}
-
-	return res.json(data);
-});
-app.listen(PORT);
-
-async function getStats(extensionID) {
+module.exports = async function(extensionID) {
 	if (!REGEX_EXTENSIONID.test(extensionID.toLowerCase())) {
 		return createResponse(false, 'Invalid extension ID');
 	}

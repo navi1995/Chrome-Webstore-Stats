@@ -1,5 +1,5 @@
 {
-  "name": "chrome-extension-stats",
+  "name": "chrome-webstore-stats",
   "version": "1.0.0",
   "description": "Fetch stats from Chrome webstore page",
   "main": "index.js",
@@ -7,10 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "keywords": [
+    "chrome",
+    "extension",
+    "webstore",
+    "stats"
+  ],
   "author": "Navi Jador",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
     "node-fetch": "^2.6.0"
-  }
+  },
+  "homepage": "https://github.com/navi1995/Chrome-Webstore-Stats"
 }
