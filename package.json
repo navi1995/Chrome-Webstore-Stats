@@ -4,13 +4,13 @@
   "description": "Fetch stats from Chrome webstore page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "author": "",
+  "author": "Navi Jador",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "request": "^2.88.2",
-    "request-promise-native": "^1.0.8"
+    "node-fetch": "^2.6.0"
   }
 }
