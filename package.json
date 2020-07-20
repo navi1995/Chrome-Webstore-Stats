@@ -4,7 +4,7 @@
   "description": "Fetch stats from Chrome webstore page",
   "main": "index.js",
   "scripts": {
-    "test": "echo no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node index.js"
   },
   "repository": {

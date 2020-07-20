@@ -1,4 +1,3 @@
-const it = require('mocha').it;
 const assert = require('chai').assert;
 const chromeStoreStats = require('../index.js');
 
