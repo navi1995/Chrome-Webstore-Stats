@@ -1,6 +1,6 @@
 {
   "name": "chrome-webstore-stats",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Fetch stats from Chrome webstore page",
   "main": "index.js",
   "scripts": {
@@ -31,8 +31,5 @@
     "mocha": "^8.0.1",
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^15.1.0"
-  },
-  "files": [
-    "index.js"
-  ]
+  }
 }
