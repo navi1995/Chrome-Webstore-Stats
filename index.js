@@ -24,10 +24,10 @@ module.exports = async function(inputIDs) {
 		try {
 			const response = await fetch(`${URL_PREFIX}${extensionID}`); 
 			const data = await response.text();
-			const name = data.match(REGEX_NAME)[1] || ''; //For future if multiple ID's?
-			const installCount = parseInt(data.match(REGEX_INSTALL_COUNT)[1]) || 0;
-			const ratingCount = parseInt(data.match(REGEX_RATING_COUNT)[1]) || 0;
-			const ratingValue = parseFloat(data.match(REGEX_RATING_VALUE)[1]) || 0;
+			const name = data.match(REGEX_NAME)[1];
+			const installCount = parseInt(data.match(REGEX_INSTALL_COUNT)[1]);
+			const ratingCount = parseInt(data.match(REGEX_RATING_COUNT)[1]);
+			const ratingValue = parseFloat(data.match(REGEX_RATING_VALUE)[1]);
 
 			responses[extensionID] = createResponse(true, false, name, installCount, ratingCount, ratingValue);
 
