@@ -6,6 +6,7 @@
 This is a simple node module used to provide details of any given chrome webstore's extension ID (32 alpha string from end of webstore link) or ARRAY of extension IDs.
 
 The following details will be provided given a valid webstore ID:
+- Name: Name associated with extension ID for webstore listing.
 - Install Count: Number of installs the webstore listing has
 - Rating Count: Number of votes cast
 - Rating value: Average rating out of 5
