@@ -1,6 +1,6 @@
 {
   "name": "chrome-webstore-stats",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Fetch stats from Chrome webstore page",
   "main": "index.js",
   "scripts": {
