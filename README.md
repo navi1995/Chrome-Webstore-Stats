@@ -1,3 +1,7 @@
+[![npm](https://img.shields.io/npm/v/chrome-webstore-stats)](https://www.npmjs.com/package/chrome-webstore-stats)
+[![Build Status](https://travis-ci.org/navi1995/Chrome-Webstore-Stats.svg?branch=master)](https://travis-ci.org/navi1995/Chrome-Webstore-Stats)
+[![David](https://img.shields.io/david/navi1995/chrome-webstore-stats)](https://david-dm.org/navi1995/chrome-webstore-stats)
+[![Coverage Status](https://coveralls.io/repos/github/navi1995/Chrome-Webstore-Stats/badge.svg?branch=master)](https://coveralls.io/github/navi1995/Chrome-Webstore-Stats?branch=master)
 # Chrome Webstore Stats 
 This is a simple node module used to provide details of any given chrome webstore's extension ID (32 alpha string from end of webstore link) or ARRAY of extension IDs.
 
