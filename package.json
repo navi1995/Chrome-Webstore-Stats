@@ -4,8 +4,12 @@
   "description": "Fetch stats from Chrome webstore page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo no test specified\" && exit 1",
     "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/navi1995/Chrome-Webstore-Stats"
   },
   "keywords": [
     "chrome",
@@ -18,5 +22,10 @@
   "dependencies": {
     "node-fetch": "^2.6.0"
   },
-  "homepage": "https://github.com/navi1995/Chrome-Webstore-Stats"
+  "homepage": "https://github.com/navi1995/Chrome-Webstore-Stats",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.5.0",
+    "mocha": "^8.0.1"
+  }
 }
