@@ -3,8 +3,10 @@ const fetch = require('node-fetch');
 const URL_PREFIX = 'https://chrome.google.com/webstore/detail/';
 const REGEX_NAME = '<meta itemprop="name" content="([^"]*)"/>';
 const REGEX_INSTALL_COUNT = '<Attribute name="user_count">([0-9]*)</Attribute>';
-const REGEX_RATING_COUNT = '<meta itemprop="ratingCount" content="([0-9]*)"/>';
-const REGEX_RATING_VALUE = '<meta itemprop="ratingValue" content="([0-9.]*)"/>';
+const REGEX_RATING_COUNT = '([0-9]*) users rated this';
+const REGEX_RATING_VALUE = 'Average rating ([0-9.]*) out of 5.';
+// const REGEX_RATING_COUNT = '<meta itemprop="ratingCount" content="([0-9]*)"/>'; //No longer scrapeable
+// const REGEX_RATING_VALUE = '<meta itemprop="ratingValue" content="([0-9.]*)"/>'; //No longer scrapeable
 //Credit to https://github.com/petasittek/chrome-web-store-stats/ for regex above
 const REGEX_EXTENSIONID = /[a-z]{32}$/;
 
