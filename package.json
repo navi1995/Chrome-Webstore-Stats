@@ -21,7 +21,7 @@
   "author": "Navi Jador",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   },
   "homepage": "https://github.com/navi1995/Chrome-Webstore-Stats",
   "devDependencies": {
