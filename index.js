@@ -2,7 +2,8 @@ const fetch = require('node-fetch');
 //Credit to https://github.com/petasittek/chrome-web-store-stats/ for regex below
 const URL_PREFIX = 'https://chrome.google.com/webstore/detail/';
 const REGEX_NAME = '<meta itemprop="name" content="([^"]*)"/>';
-const REGEX_INSTALL_COUNT = '<Attribute name="user_count">([0-9]*)</Attribute>';
+// const REGEX_INSTALL_COUNT = '<Attribute name="user_count">([0-9]*)</Attribute>';
+const REGEX_INSTALL_COUNT = /content="UserDownloads:([\d,+]+)/;
 const REGEX_RATING_COUNT = '([0-9]*) users rated this';
 const REGEX_RATING_VALUE = 'Average rating ([0-9.]*) out of 5.';
 // const REGEX_RATING_COUNT = '<meta itemprop="ratingCount" content="([0-9]*)"/>'; //No longer scrapeable
@@ -27,7 +28,7 @@ module.exports = async function(inputIDs) {
 			const response = await fetch(`${URL_PREFIX}${extensionID}`); 
 			const data = await response.text();
 			const name = data.match(REGEX_NAME)[1];
-			const installCount = parseInt(data.match(REGEX_INSTALL_COUNT)[1]);
+			const installCount = data.match(REGEX_INSTALL_COUNT)[1] + "";
 			const ratingCount = parseInt(data.match(REGEX_RATING_COUNT)[1]);
 			const ratingValue = parseFloat(data.match(REGEX_RATING_VALUE)[1]);
 
@@ -44,7 +45,7 @@ module.exports = async function(inputIDs) {
 	return extensionIDs.length <= 1 ? responses[extensionIDs[0]] : responses;
 }
 
-function createResponse(success, error, name = '', installCount = 0, ratingCount = 0, ratingValue = 0) {
+function createResponse(success, error, name = '', installCount = "0", ratingCount = 0, ratingValue = 0) {
 	return {
 		success,
 		error,

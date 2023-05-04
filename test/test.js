@@ -8,7 +8,7 @@ it("Existing ID Check", async function() {
 	assert.equal(data.success, true);
 	assert.equal(data.error, false);
 	assert.equal(data.name, 'YouTube Windowed FullScreen');
-	assert.typeOf(data.installCount, 'number');
+	assert.typeOf(data.installCount, 'string');
 	assert.typeOf(data.ratingCount, 'number');
 	assert.typeOf(data.ratingValue, 'number');
 });
@@ -27,14 +27,14 @@ it("Multiple ID array check", async function() {
 	assert.equal(e1.success, true);
 	assert.equal(e1.error, false);
 	assert.equal(e1.name, 'YouTube Windowed FullScreen');
-	assert.typeOf(e1.installCount, 'number');
+	assert.typeOf(e1.installCount, 'string');
 	assert.typeOf(e1.ratingCount, 'number');
 	assert.typeOf(e1.ratingValue, 'number');
 
 	assert.equal(e2.success, false);
 	assert.equal(e2.error, 'Couldn\'t find extension with ID gkkmiofalnjagdcjheckamobghglpdpz');
 	assert.equal(e2.name, '');
-	assert.typeOf(e2.installCount, 'number');
+	assert.typeOf(e2.installCount, 'string');
 	assert.typeOf(e2.ratingCount, 'number');
 	assert.typeOf(e2.ratingValue, 'number');
 	assert.equal(e2.installCount, 0);
@@ -44,7 +44,7 @@ it("Multiple ID array check", async function() {
 	assert.equal(e3.success, true);
 	assert.equal(e3.error, false);
 	assert.equal(e3.name, 'Social Blade');
-	assert.typeOf(e3.installCount, 'number');
+	assert.typeOf(e3.installCount, 'string');
 	assert.typeOf(e3.ratingCount, 'number');
 	assert.typeOf(e3.ratingValue, 'number');
 });
@@ -56,7 +56,7 @@ it("Empty instantiation", async function() {
 	assert.equal(data.success, false);
 	assert.equal(data.error, 'Invalid extension ID.');
 	assert.equal(data.name, '');
-	assert.typeOf(data.installCount, 'number');
+	assert.typeOf(data.installCount, 'string');
 	assert.typeOf(data.ratingCount, 'number');
 	assert.typeOf(data.ratingValue, 'number');
 	assert.equal(data.installCount, 0);
@@ -71,7 +71,7 @@ it("Null instantiation", async function() {
 	assert.equal(data.success, false);
 	assert.equal(data.error, 'Invalid extension ID.');
 	assert.equal(data.name, '');
-	assert.typeOf(data.installCount, 'number');
+	assert.typeOf(data.installCount, 'string');
 	assert.typeOf(data.ratingCount, 'number');
 	assert.typeOf(data.ratingValue, 'number');
 	assert.equal(data.installCount, 0);
@@ -86,7 +86,7 @@ it("Undefined instantiation", async function() {
 	assert.equal(data.success, false);
 	assert.equal(data.error, 'Invalid extension ID.');
 	assert.equal(data.name, '');
-	assert.typeOf(data.installCount, 'number');
+	assert.typeOf(data.installCount, 'string');
 	assert.typeOf(data.ratingCount, 'number');
 	assert.typeOf(data.ratingValue, 'number');
 	assert.equal(data.installCount, 0);
@@ -101,7 +101,7 @@ it("Numbers only extension ID", async function() {
 	assert.equal(data.success, false);
 	assert.equal(data.error, 'Invalid extension ID.');
 	assert.equal(data.name, '');
-	assert.typeOf(data.installCount, 'number');
+	assert.typeOf(data.installCount, 'string');
 	assert.typeOf(data.ratingCount, 'number');
 	assert.typeOf(data.ratingValue, 'number');
 	assert.equal(data.installCount, 0);
@@ -116,7 +116,7 @@ it("Empty string instantiation", async function() {
 	assert.equal(data.success, false);
 	assert.equal(data.error, 'Invalid extension ID.');
 	assert.equal(data.name, '');
-	assert.typeOf(data.installCount, 'number');
+	assert.typeOf(data.installCount, 'string');
 	assert.typeOf(data.ratingCount, 'number');
 	assert.typeOf(data.ratingValue, 'number');
 	assert.equal(data.installCount, 0);

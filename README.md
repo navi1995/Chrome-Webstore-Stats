@@ -7,9 +7,12 @@ This is a simple node module used to provide details of any given chrome webstor
 
 The following details will be provided given a valid webstore ID:
 - Name: Name associated with extension ID for webstore listing.
-- Install Count: Number of installs the webstore listing has
+- Install Count: Number of installs the webstore listing has 
 - Rating Count: Number of votes cast
 - Rating value: Average rating out of 5
+
+## Note
+Google Webstore has been updated and no longer provides specific install count, and instead aggregates e.g 41,678 -> 40,000+ so this will now be returned as a string.
 
 ## Setup
 Run `npm install chrome-webstore-stats` to install the dependencies and module to your project.
